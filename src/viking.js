@@ -83,13 +83,9 @@ class War {
     return damageText;*/
   }
   saxonAttack() {
-    const idxSaxon = Math.round(Math.random() * (this.saxonArmy.length - 1));
-    const chosenSaxon = this.saxonArmy[idxSaxon];
-    const idxViking = Math.round(Math.random() * (this.vikingArmy.length - 1));
-    const chosenViking = this.vikingArmy[idxViking];
-    const damageText = chosenViking.receiveDamage(chosenSaxon.strength);
+    const message = this.genericAttack(this.saxonArmy, this.vikingArmy);
     this.vikingArmy = this.vikingArmy.filter((viking) => viking.health > 0);
-    return damageText;
+    return message;
   }
 
   showStatus() {
