@@ -74,14 +74,15 @@ class War {
     const message = this.genericAttack(this.vikingArmy, this.saxonArmy);
     this.saxonArmy = this.saxonArmy.filter((soldier) => soldier.health > 0);
     return message;
-    /*const idxViking = Math.round(Math.random() * (this.vikingArmy.length - 1));
+  }
+  /*const idxViking = Math.round(Math.random() * (this.vikingArmy.length - 1));
     const chosenViking = this.vikingArmy[idxViking];
     const idxSaxon = Math.round(Math.random() * (this.saxonArmy.length - 1));
     const chosenSaxon = this.saxonArmy[idxSaxon];
     const damageText = chosenSaxon.receiveDamage(chosenViking.strength);
     this.saxonArmy = this.saxonArmy.filter((saxon) => saxon.health > 0);
     return damageText;*/
-  }
+
   saxonAttack() {
     const message = this.genericAttack(this.saxonArmy, this.vikingArmy);
     this.vikingArmy = this.vikingArmy.filter((viking) => viking.health > 0);
@@ -108,6 +109,7 @@ war.addViking(new Viking("Kris", 6, 6));
 war.vikingAttack();
 war.saxonAttack();
 //console.log(war);
+
 /*
 // Soldier
 class Soldier {
